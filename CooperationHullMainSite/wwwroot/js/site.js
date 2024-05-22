@@ -32,19 +32,12 @@ function home_page_signup_form_submit() {
     let body = document.querySelector('#callout-block-body-text');
     let block = document.querySelector('#call-out-block-text');
     let signupWrapper = document.getElementById('signup-wrapper');
+    
+    let forename = document.getElementById('PledgeFormFirstName').value;
 
     // Set new classes - Currently the same - needs style changing
-    header.classList.add('bigger-font')
     block.classList.add('call-out-block-text-after-submit');
     signupWrapper.classList.add('call-out-block-wrapper-after-submit');
-
-    // If success
-    header.textContent = 'Thanks!';
-    body.textContent = "We'll be in touch soon.";
-
-    // If error
-    header.textContent = "Oops, that didn't work";
-    body.textContent = "Please try again later"
 
     $.ajax({
         type: "POST",
@@ -57,18 +50,26 @@ function home_page_signup_form_submit() {
         success: function (response) {
 
             if (response.result) {
+                // Set the Success Text
+                header.classList.add('bigger-font')
+                header.textContent = `Thanks ${forename}!`;
+                body.textContent = "We'll be in touch soon.";
+
+                // Hide the form
                 $('#signedbyName').html(response.signedByName);
                 $('#home_page_signup_form').hide();
                 $('#form-completed').show();
+                header.textContent = 'Thanks!';
+                body.textContent = "We'll be in touch soon.";
+                $('#home_page_signup_form').remove();
             }
             else {
-                $('#homepage-formError').html(response.error);
+                // Set the Error Text
+                header.textContent = `Sorry ${forename}, that didn't work.`;
+                body.textContent = "Please try again later";
             }
         }
     });
-
-    // Remove the submitted form
-    $('#home_page_signup_form').remove();
 
     return false;
 
