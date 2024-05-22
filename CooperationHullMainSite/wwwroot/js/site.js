@@ -58,10 +58,8 @@ function home_page_signup_form_submit() {
                 // Hide the form
                 $('#signedbyName').html(response.signedByName);
                 $('#home_page_signup_form').hide();
-                $('#form-completed').show();
                 header.textContent = 'Thanks!';
                 body.textContent = "We'll be in touch soon.";
-                $('#home_page_signup_form').remove();
             }
             else {
                 // Set the Error Text
