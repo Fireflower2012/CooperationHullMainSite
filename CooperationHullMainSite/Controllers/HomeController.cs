@@ -23,7 +23,6 @@ namespace CooperationHullMainSite.Controllers
             _actionNetworkCalls = actionNetworkCalls;
         }
 
-
         [HttpGet]
         public async Task<IActionResult> Index()
         {
@@ -95,7 +94,7 @@ namespace CooperationHullMainSite.Controllers
                 if (result)
                     return Json(new { result = result, signedByName = data.given_name });
                 else
-                    return Json(new { result = result, error = "Something went wrong. Please try again later;" });
+                    return Json(new { result = result, error = "Something went wrong. Please try again later;"});
             }
         }
 
