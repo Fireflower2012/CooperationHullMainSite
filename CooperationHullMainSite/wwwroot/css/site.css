@@ -113,14 +113,17 @@ h1 {
     z-index: 101;
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%
+    width: 100%;
+    max-width: 1903px;
+    margin: auto;
 }
 
 .navbar {
     color: var(--off-black);
     padding-left: 4rem;
     padding-right: 4rem;
+    max-width: 1903px;
+    margin: auto;
 }
 
 .nav-logo {
@@ -189,15 +192,17 @@ h1 {
 }
 
 .sidenav {
+    
     align-items: center;
     text-align: center;
     background-color: white;
     z-index: 10;
     right: 0;
     padding: 0;
+    margin-right: 2rem;
     position: absolute;
     border-radius: 0% 0% 10% 10%;
-    margin-right: 2rem;
+    
 }
 
 .sidenav-buttons {
@@ -538,12 +543,13 @@ h1 {
         background-repeat: no-repeat;
     }
 
-    .hww .spot {
-        position: absolute;
-        right: 12%;
-        bottom: 0;
-        z-index: -1;
-    }
+.hww .spot {
+    position: absolute;
+    margin:auto;
+    left: 42%;
+    bottom: 0;
+    z-index: 0;
+}
 
     .hww .video {
         z-index: 10;

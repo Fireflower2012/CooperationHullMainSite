@@ -70,18 +70,4 @@ jobs:
         with:
          app-name: ${{ env.AZURE_WEBAPP_NAME }}
          publish-profile: ${{ secrets.PRODUCTION_PUBLISH_PROFILE }}
-         package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
-      # - name: Login to Azure
-      #   uses: azure/login@v2
-      #   with:
-      #     client-id: ${{ secrets.PRODUCTION_AZUREAPP_CLIENT }}
-      #     tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_0A240E01865F4B80921AEABBB0810436 }}
-      #     subscription-id: ${{ secrets.PRODUCTION_AZUREAPP_SUBSCRIPTION }}
-
-      # - name: Deploy to Azure Web App
-      #   id: deploy-to-webapp
-      #   uses: azure/webapps-deploy@v3
-      #   with:
-      #     app-name: ${{ env.AZURE_WEBAPP_NAME }}
-      #     package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
-          
+         package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}        
