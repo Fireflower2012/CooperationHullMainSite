@@ -762,6 +762,7 @@ section:has(+ .call-out-block-wrapper) {
     padding: 2rem 1rem;
     border-radius: 8px;
     overflow: hidden;
+    z-index: 0;
 }
 
 @media (min-width: 992px) {
@@ -780,7 +781,7 @@ section:has(+ .call-out-block-wrapper) {
     position: absolute;
     bottom: -8%;
     left: 36%;
-    z-index: 0;
+    z-index: -1;
     width: 160px;
 }
 
